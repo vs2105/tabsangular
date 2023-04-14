@@ -1,0 +1,35 @@
+<div class="form-group">
+      <label for="">Product Search</label>
+      <input type="text" class="form-control" (keyup)="OnProductsearch($event)">
+</div>
+<div class="form-group">
+    <label for="">Product Search</label>
+    <input type="text" class="form-control" [(ngModel)]="searchproductname">
+</div>
+
+<p [innerHTML]="searchproductname">
+   
+</p>
+
+<button class="btn btn-primary mb-4 mr-4" [disabled]="isdisabled" (click)="getproductstatus()">add products</button>
+
+<button class="btn btn-danger mb-4" [disabled]="noofproduct === 0" (click)="removeproduct()">remove products</button>
+
+<!-- <p [innerHTML]="searchproductname">
+   
+</p> -->
+<p class="alert alert-info mb-4">
+    {{productsstate}}
+</p>
+
+<!-- <input type="text" class="form-control"   (input)="onkeyup($event)"> -->
+
+<app-product></app-product>
+<app-product></app-product>
+<!-- <div app-product>
+
+</div> -->
+<!-- <div class="app-product">
+
+</div> -->
+<!-- <app-product></app-product> -->

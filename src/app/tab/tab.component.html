@@ -1,0 +1,41 @@
+<ul class="nav nav-pills">
+    <li class="nav-item">
+        <a href="javascript:;" class="nav-link"(click)="onFwvaluechange($event)" [ngClass]="{active : framework.toLowerCase().trim() === 'angular'}">
+            Angular
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="javascript:;"  class="nav-link"(click)="onFwvaluechange($event)"[ngClass]="{active : framework.toLowerCase().trim() === 'react'}">
+            React
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="javascript:;" class="nav-link" (click)="onFwvaluechange($event)" [ngClass]="{active : framework.toLowerCase().trim() === 'vue'}">
+            Vue
+        </a>
+    </li>
+</ul>
+
+<div class="tabs-body"[ngSwitch]="framework.toLowerCase().trim() ">
+    <div class="card" *ngSwitchCase="'angular'">
+       <div class="card-body">
+        <p>
+        <strong>Angular</strong>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero repellat delectus amet incidunt, unde dicta asperiores? Debitis voluptatem laudantium recusandae.
+        </p>
+       </div>
+    </div>
+    <div class="card" *ngSwitchCase="'react'">
+        <div class="card-body">
+            <p>
+           <strong>React</strong>    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum a at possimus itaque? Dignissimos earum, nemo sed sint commodi velit.
+            </p>
+        </div>
+    </div>
+    <div class="card"*ngSwitchCase="'vue'" >
+        <div class="card-body">
+            <p>
+            <strong>Vue</strong>     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore, illo ex culpa iusto deserunt molestiae fugiat atque ad debitis. Dolorum?
+            </p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<!-- <button class="btn btn-primary mb-4" [disabled]="isdisabled">add products</button>
+
+<input type="text" [value]="pName" class="form-control"> -->
+<!-- <hr> -->
+<!-- <p class="info">
+    the product is {{pName}} with ID {{pID}} and status is in {{pStatus}}...
+</p> -->
+
+<p [ngStyle]="{backgroundColor: isproductavailible ? 'orange' :'#ccc'}"
+    [ngClass]="{
+            'text-white':isproductavailible,
+            'p-4':isproductavailible,
+            'p-2':!isproductavailible
+    }">
+    the product is {{pName}} with ID {{pID}}
+    <strong *ngIf="isproductavailible; else productisnotAvail">and the product is available</strong>
+    <ng-template #productisnotAvail>
+        <strong>
+            & the product is not available
+        </strong>
+    </ng-template>
+</p>
